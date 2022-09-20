@@ -21,6 +21,7 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     SearchBarComponent,
     HomeComponent
+
   ],
   imports: [
     BrowserModule,
