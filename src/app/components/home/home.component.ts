@@ -9,12 +9,13 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public sort!: string;
-  public games! : Array<Game>;
-
+  public sort!: string ;
+  public games!: Array<Game>;
+  
   constructor(
     private httpService: HttpService,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +32,9 @@ searchGames(sort:string,search?:string):void{
   .getGameList(sort,search)
   .subscribe((gameList:APIResponse<Game>)=>{
     this.games=gameList.result;
-    console.log(gameList);
+    console.log(this.games);
+    //console.log(gameList);
+  
   })
 }
 }
