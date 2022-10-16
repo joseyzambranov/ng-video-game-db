@@ -9,14 +9,18 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public sort!: string ;
-  public games!: Array<Game>;
   
+  public sort!: string 
+    public games!: Array<Game>
+
   constructor(
+    
     private httpService: HttpService,
     private activateRoute: ActivatedRoute,
     
-  ) { }
+    
+  ) {}
+   gameList : any =  []
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe((params:Params)=>{
@@ -31,9 +35,8 @@ searchGames(sort:string,search?:string):void{
   this.httpService
   .getGameList(sort,search)
   .subscribe((gameList:APIResponse<Game>)=>{
-    this.games=gameList.result;
-    console.log(this.games);
-    //console.log(gameList);
+    this.games=gameList.results;
+    console.log(gameList);
   
   })
 }

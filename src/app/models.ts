@@ -15,6 +15,7 @@ export interface Game{
     
 }
 export interface APIResponse<T>{
+    results: Game[];
     result: Array<T>;
 }
 interface Genre{

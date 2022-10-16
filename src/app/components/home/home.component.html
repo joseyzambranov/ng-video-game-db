@@ -30,9 +30,9 @@
                 <p class="game-name">{{game.name}}</p>
                 <div class="game-platforms">
                     <img 
-                        *ngFor="let gamePlatForm of game.parent_platforms"
+                        *ngFor="let gamePlatform of game.parent_platforms"
                         src="assets/images/platforms/android.svg" 
-                        alt="{{ gamePlatForm.platform.slug }}"
+                        alt="{{ gamePlatform.platform.slug }}"
                         class="game-platform"/>
                 </div>
             </div>
